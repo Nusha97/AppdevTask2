@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.appdevtask2.MainActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:src="@drawable/landscape"
+        android:layout_alignParentTop="true"
+        android:id="@+id/image1"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/slideshow"
+        android:text="Slideshow"
+        android:layout_below="@id/image1"
+        android:layout_marginTop="16dp"
+        android:onClick="Slideshow"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/play"
+        android:text="Play"
+        android:layout_below="@id/slideshow"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="32dp"
+        android:onClick="Play"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/stop"
+        android:text="Stop"
+        android:layout_below="@id/slideshow"
+        android:layout_toRightOf="@id/play"
+        android:layout_marginTop="16dp"
+        android:onClick="Stop"/>
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/spinner"
+        android:layout_below="@id/play">
+    </Spinner>
+
+</RelativeLayout>
