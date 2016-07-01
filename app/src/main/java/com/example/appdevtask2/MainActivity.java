@@ -130,10 +130,11 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
     }
 
     public  void Stop(View view){
-        //mediaPlayer.stop();
+        
         //mediaPlayer.reset();
         MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.payphone);
-        mediaPlayer.release();
+        mediaPlayer.stop();
+        //mediaPlayer.release();
 
     }
     public void display(){
