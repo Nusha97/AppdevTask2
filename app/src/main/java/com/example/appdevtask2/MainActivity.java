@@ -25,6 +25,7 @@ import java.util.TimerTask;
 public class MainActivity extends Activity implements AdapterView.OnItemSelectedListener{
 
     public int currentimageindex = 0;
+    String currentsong;
     //    Timer timer;
 //    TimerTask task;
     ImageView slidingimage;
@@ -67,6 +68,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         // On selecting a spinner item
         String item = parent.getItemAtPosition(position).toString();
+        currentsong = parent.getItemAtPosition(position).toString();
 
         // Showing selected spinner item
         Toast.makeText(parent.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
@@ -101,15 +103,38 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
 
     public void Play(View view){
 
-        MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.payphone);
-        mediaPlayer.start();
+        if(currentsong.equalsIgnoreCase("payphone")) {
+           MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.payphone);
+            //mediaPlayer.reset();
+            mediaPlayer.start();
+        }
+        else if(currentsong.equalsIgnoreCase("demons")){
+            MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.demons);
+            //mediaPlayer.reset();
+            mediaPlayer.start();
+        }
+        else if(currentsong.equalsIgnoreCase("itstime")){
+            MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.itstime);
+            //mediaPlayer.reset();
+            mediaPlayer.start();
+        }
+        else if(currentsong.equalsIgnoreCase("afterhours")){
+            MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.afterhours);
+            //mediaPlayer.reset();
+            mediaPlayer.start();
+        }
+        else{
+
+        }
 
     }
 
     public  void Stop(View view){
-
+        //mediaPlayer.stop();
+        //mediaPlayer.reset();
         MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.payphone);
-        mediaPlayer.pause();
+        mediaPlayer.release();
+
     }
     public void display(){
     final Handler mHandler = new Handler();
